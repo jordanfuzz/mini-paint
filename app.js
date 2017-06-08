@@ -8,20 +8,28 @@ $(document).ready(function() {
     var yellow = $('#yellow')
     var white = $('#white')
 
-    box.on('click', function() {
-        $(this).addClass(selectedColor)
+    var drag = false
+
+    box.on('mousedown',function() {
+        drag = true
     })
-    
+    box.on('mouseover',function() {
+        if(drag) {
+            $(this).removeClass()
+            $(this).addClass(selectedColor)
+        }
+    })
+    box.on('mouseup',function() {
+        drag = false
+    })
+
     box.on('dblclick', function() {
         $(this).removeClass(selectedColor)
     })
 
     reset.on('click', function() {
-        box.removeClass('red')
-        box.removeClass('green')
-        box.removeClass('blue')
-        box.removeClass('yellow')
-        box.removeClass('white')
+        box.removeClass()
+
     })
 
     red.on('click', function() {

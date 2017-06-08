@@ -9,21 +9,19 @@ $(document).ready(function() {
     var white = $('#white')
 
     box.on('click', function() {
-
         $(this).addClass(selectedColor)
-
-
     })
     
     box.on('dblclick', function() {
-        
         $(this).removeClass(selectedColor)
     })
 
     reset.on('click', function() {
-        box.removeClass(selectedColor)
-
-
+        box.removeClass('red')
+        box.removeClass('green')
+        box.removeClass('blue')
+        box.removeClass('yellow')
+        box.removeClass('white')
     })
 
     red.on('click', function() {
@@ -41,6 +39,4 @@ $(document).ready(function() {
     white.on('click', function() {
         selectedColor = 'white'
     })
-
-
 })
